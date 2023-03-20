@@ -12,7 +12,6 @@ import {
     StyledSubHeading,
     HeaderBackground,
 } from "../styles/commonstyled.js";
-
 export const tempArray = [];
 
 function DailyWeatherApp() {
@@ -34,16 +33,12 @@ function DailyWeatherApp() {
                 loggedData.forecast.forecastday[0].hour.map((hour) => {
                     tempArray.push(hour.feelslike_c);
                 });
-
-                console.log(tempArray);
             });
     };
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
-
-    const array2 = ["Hallo", "på deg"];
 
     return (
         <>
