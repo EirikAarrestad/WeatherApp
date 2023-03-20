@@ -12,7 +12,13 @@ const TableHeaderIndex = data[0].tableHeaders.map((index) => {
 
 let timeAray = [];
 for (let i = 0; i < 24; i++) {
-    timeAray.push(i);
+    if (i === 0) {
+        timeAray.push(`00:${i}0`);
+    } else if (i != 0 && i <= 9) {
+        timeAray.push(`0${i}:00`);
+    } else {
+        timeAray.push(`${i}:00`);
+    }
 }
 
 const FinalTable = (props) => {
