@@ -25,7 +25,7 @@ const FinalTable = (props) => {
                         name={TableHeaderIndex.map((tableHeaders) => (
                             <th>{tableHeaders}</th>
                         ))}
-                        subtext={TableContents.map((Tabletext) => (
+                        subtext={props.array.map((Tabletext) => (
                             <tr>
                                 <td>{Tabletext}</td>
                             </tr>

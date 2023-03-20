@@ -31,22 +31,6 @@ function DailyWeatherApp() {
                 setWeatherImg(loggedData.current.condition.icon);
                 setCountry(inputValue);
 
-                /*const dailyTemp = loggedData.forecast.forecastday[0].hour.map(
-                    (hour) => {
-                        return hour.feelslike_c;
-                    }
-                );
-
-                const dailyTemp = loggedData.forecast.forecastday[0].hour.map(
-                    (hour) => {
-                        tempArray.push(hour.feelslike_c);
-                    }
-                );
-
-                for (let i = 0; i < dailyTemp.length; i++) {
-                    console.log([i + 1] + ": " + dailyTemp[i]);
-                }*/
-
                 loggedData.forecast.forecastday[0].hour.map((hour) => {
                     tempArray.push(hour.feelslike_c);
                 });
@@ -58,6 +42,8 @@ function DailyWeatherApp() {
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
     };
+
+    const array2 = ["Hallo", "på deg"];
 
     return (
         <>
@@ -83,10 +69,9 @@ function DailyWeatherApp() {
                 </StyledP>
                 <div>
                     <StyledImg src={weatherImg} />
-                    <p>TableEdit</p>
                 </div>
             </StyledDIV>
-            <FinalTable />
+            <FinalTable array={tempArray} />
         </>
     );
 }
