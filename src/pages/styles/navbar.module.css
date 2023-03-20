@@ -1,0 +1,18 @@
+li a {
+    margin: 10px;
+    display: block;
+    color: #006edb;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid #006edb;
+    border-radius: 2px;
+    font-family: Helvetica, sans-serif;
+    transition-duration: 0.3s;
+}
+
+li a:hover {
+    background-color: #eef6f8;
+    border: #006edb solid 2px;
+}

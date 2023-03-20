@@ -53,6 +53,25 @@ export const HeaderBackground = styled.div`
     padding: 20px 30px;
 `;
 
+export const NavElement = styled.nav`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+`;
+
+export const UnorderedlistElement = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+`;
+export const ListElement = styled.li`
+    float: right;
+`;
+
 export default {
     StyledDIV,
     StyledInput,
@@ -63,4 +82,7 @@ export default {
     TemperaturContainerDiv,
     StyledSubHeading,
     HeaderBackground,
+    ListElement,
+    UnorderedlistElement,
+    NavElement,
 };
