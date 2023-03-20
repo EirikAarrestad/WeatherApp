@@ -83,6 +83,7 @@ function DailyWeatherApp() {
                 </StyledP>
                 <div>
                     <StyledImg src={weatherImg} />
+                    <p>TableEdit</p>
                 </div>
             </StyledDIV>
             <FinalTable />
