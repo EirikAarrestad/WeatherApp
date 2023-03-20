@@ -2,8 +2,7 @@ import Table from "./Table";
 
 const data = [
     {
-        tableHeaders: ["Tid", "Temp", "Dag"],
-        subtext: ["kl 19", "kl 20", "kl 21", "kl 22", "kl 23"],
+        tableHeaders: ["Tid", "Temp"],
     },
 ];
 
@@ -11,23 +10,24 @@ const TableHeaderIndex = data[0].tableHeaders.map((index) => {
     return index;
 });
 
-const TableContents = data[0].subtext.map((index) => {
-    return index;
-});
+let timeAray = [];
+for (let i = 0; i < 24; i++) {
+    timeAray.push(i);
+}
 
 const FinalTable = (props) => {
     return (
         <div>
-            {data.map((tbContent) => {
+            {data.map(() => {
                 return (
                     <Table
-                        key={tbContent.subtext}
                         name={TableHeaderIndex.map((tableHeaders) => (
-                            <th>{tableHeaders}</th>
+                            <th key={tableHeaders}>{tableHeaders}</th>
                         ))}
-                        subtext={props.array.map((Tabletext) => (
-                            <tr>
-                                <td>{Tabletext}</td>
+                        thing={timeAray.map((hour, index) => (
+                            <tr key={hour}>
+                                <td>{hour}</td>
+                                <td>{props.tempArray[index]}</td>
                             </tr>
                         ))}
                     ></Table>
@@ -36,4 +36,5 @@ const FinalTable = (props) => {
         </div>
     );
 };
+
 export default FinalTable;

@@ -71,7 +71,7 @@ function DailyWeatherApp() {
                     <StyledImg src={weatherImg} />
                 </div>
             </StyledDIV>
-            <FinalTable array={tempArray} />
+            <FinalTable tempArray={tempArray} />
         </>
     );
 }
