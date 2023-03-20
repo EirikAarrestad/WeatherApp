@@ -80,6 +80,7 @@ function DailyWeatherApp() {
                 </StyledButton>
                 <StyledP>
                     It is {celcius} degrees celcius in {country}
+                    <p>THis is the table</p>
                 </StyledP>
                 <div>
                     <StyledImg src={weatherImg} />
