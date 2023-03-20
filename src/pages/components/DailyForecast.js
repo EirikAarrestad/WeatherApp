@@ -18,8 +18,6 @@ function DailyWeatherApp() {
     const [country, setCountry] = useState("country");
     const [inputValue, setInputValue] = useState("");
 
-    const [chartData, setChartData] = useState({});
-
     const handleClick = () => {
         const API_ENDPOINT = `http://api.weatherapi.com/v1/forecast.json?key=01b4656903724841b8b92404231402&q=${inputValue}&aqi=en`;
         fetch(API_ENDPOINT)
@@ -34,6 +32,10 @@ function DailyWeatherApp() {
                         return hour.feelslike_c;
                     }
                 );
+
+                for (let i = 0; i < dailyTemp.length; i++) {
+                    console.log([i + 1] + ": " + dailyTemp[i]);
+                }
             });
     };
 
@@ -61,10 +63,10 @@ function DailyWeatherApp() {
             </StyledButton>
             <StyledP>
                 It is {celcius} degrees celcius in {country}
-                <div>
-                    <StyledImg src={weatherImg} />
-                </div>
             </StyledP>
+            <div>
+                <StyledImg src={weatherImg} />
+            </div>
         </StyledDIV>
     );
 }
