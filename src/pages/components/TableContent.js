@@ -2,7 +2,7 @@ import Table from "./Table";
 
 const data = [
     {
-        tableHeaders: ["Tid", "Temp"],
+        tableHeaders: ["Hour", "Temp (In celcius)"],
     },
 ];
 
