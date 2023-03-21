@@ -13,7 +13,7 @@ const TableHeaderIndex = tableData[0].tableHeaders.map((index) => {
 let hourArray = [];
 for (let i = 0; i < 24; i++) {
     if (i === 0) {
-        hourArray.push(`00:${i}0`);
+        hourArray.push(`00:00`);
     } else if (i != 0 && i <= 9) {
         hourArray.push(`0${i}:00`);
     } else {
@@ -27,10 +27,10 @@ const HourlyTemperatureTable = (props) => {
             {tableData.map(() => {
                 return (
                     <SimpleTable
-                        name={TableHeaderIndex.map((tableHeaders) => (
+                        tableHeader={TableHeaderIndex.map((tableHeaders) => (
                             <th key={tableHeaders}>{tableHeaders}</th>
                         ))}
-                        thing={hourArray.map((hour, index) => (
+                        tableContent={hourArray.map((hour, index) => (
                             <tr key={hour}>
                                 <td>{hour}</td>
                                 <td>{props.tempArray[index]}</td>
