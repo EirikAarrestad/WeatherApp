@@ -1,6 +1,6 @@
 import { useState } from "react";
 import searchIcon from "../images/serachIcon.svg";
-import FinalTable from "./TableContent";
+import HourlyTemperatureTable from "./TableContent";
 
 import {
     StyledDIV,
@@ -66,7 +66,7 @@ function DailyWeatherApp() {
                     <StyledImg src={weatherImg} />
                 </div>
             </StyledDIV>
-            <FinalTable tempArray={tempArray} />
+            <HourlyTemperatureTable tempArray={tempArray} />
         </>
     );
 }

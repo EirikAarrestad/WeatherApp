@@ -1,46 +1,46 @@
-import Table from "./Table";
+import SimpleTable from "./Table";
 
-const data = [
+const tableData = [
     {
         tableHeaders: ["Hour", "Temp (In celcius)"],
     },
 ];
 
-const TableHeaderIndex = data[0].tableHeaders.map((index) => {
+const TableHeaderIndex = tableData[0].tableHeaders.map((index) => {
     return index;
 });
 
-let timeAray = [];
+let hourArray = [];
 for (let i = 0; i < 24; i++) {
     if (i === 0) {
-        timeAray.push(`00:${i}0`);
+        hourArray.push(`00:${i}0`);
     } else if (i != 0 && i <= 9) {
-        timeAray.push(`0${i}:00`);
+        hourArray.push(`0${i}:00`);
     } else {
-        timeAray.push(`${i}:00`);
+        hourArray.push(`${i}:00`);
     }
 }
 
-const FinalTable = (props) => {
+const HourlyTemperatureTable = (props) => {
     return (
         <div>
-            {data.map(() => {
+            {tableData.map(() => {
                 return (
-                    <Table
+                    <SimpleTable
                         name={TableHeaderIndex.map((tableHeaders) => (
                             <th key={tableHeaders}>{tableHeaders}</th>
                         ))}
-                        thing={timeAray.map((hour, index) => (
+                        thing={hourArray.map((hour, index) => (
                             <tr key={hour}>
                                 <td>{hour}</td>
                                 <td>{props.tempArray[index]}</td>
                             </tr>
                         ))}
-                    ></Table>
+                    ></SimpleTable>
                 );
             })}
         </div>
     );
 };
 
-export default FinalTable;
+export default HourlyTemperatureTable;

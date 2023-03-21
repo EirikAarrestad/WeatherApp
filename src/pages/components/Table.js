@@ -1,6 +1,6 @@
 import "../styles/tablestyled.module.css";
 
-const Table = (props) => {
+const SimpleTable = (props) => {
     return (
         <table>
             <tr>{props.name}</tr>
@@ -9,4 +9,4 @@ const Table = (props) => {
         </table>
     );
 };
-export default Table;
+export default SimpleTable;
