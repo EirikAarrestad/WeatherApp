@@ -9,8 +9,8 @@ import {
 
 const NavbarInfo = () => {
     const navEndpoints = [
-        { name: "Celcius", url: "/" },
-        { name: "Fahrenheit", url: "/" },
+        { name: "Celcius", url: "/celcius" },
+        { name: "Fahrenheit", url: "/fahrenheit" },
     ];
 
     return (
@@ -20,9 +20,7 @@ const NavbarInfo = () => {
                     <UnorderedlistElement>
                         {navEndpoints.map((nav) => (
                             <ListElement key={nav.url}>
-                                <Link to={nav.url} href="#footerBegin">
-                                    {nav.name}
-                                </Link>
+                                <Link to={nav.url}>{nav.name}</Link>
                             </ListElement>
                         ))}
                     </UnorderedlistElement>
@@ -38,8 +36,8 @@ const Navbar = () => {
         <BrowserRouter>
             <NavbarInfo />
             <Routes>
-                <Route path="/" element={""} />
-                <Route path="/contact" element={""} />
+                <Route path="/celcius" element={""} />
+                <Route path="/fahrenheit" element={""} />
             </Routes>
         </BrowserRouter>
     );
