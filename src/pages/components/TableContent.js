@@ -2,7 +2,7 @@ import SimpleTable from "./Table";
 
 const tableData = [
     {
-        tableHeaders: ["Hour", "Temp (In celcius)"],
+        tableHeaders: ["Hour", "Temp (In celcius)", "Image"],
     },
 ];
 
@@ -34,6 +34,14 @@ const HourlyTemperatureTable = (props) => {
                             <tr key={hour}>
                                 <td>{hour}</td>
                                 <td>{props.tempArray[index]}</td>
+                                <td style={{ textAlign: "center" }}>
+                                    <img
+                                        style={{
+                                            height: "40px",
+                                        }}
+                                        src={props.imgArray[index]}
+                                    />
+                                </td>
                             </tr>
                         ))}
                     ></SimpleTable>
