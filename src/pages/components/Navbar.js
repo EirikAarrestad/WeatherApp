@@ -2,39 +2,39 @@ import { Outlet, BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "../styles/navbar.module.css";
 
 import {
-    NavElement,
-    UnorderedlistElement,
-    ListElement,
+    TemperatureNavContainer,
+    TemperatureUnitList,
+    TemperatureUnitListItem,
 } from "../styles/commonstyled";
 
-const NavbarInfo = () => {
-    const navEndpoints = [
+const TemperatureUnitLinks = () => {
+    const temperatureUnitEndpoints = [
         { name: "Celcius", url: "/celcius" },
         { name: "Fahrenheit", url: "/fahrenheit" },
     ];
 
     return (
         <>
-            <NavElement>
+            <TemperatureNavContainer>
                 <div style={{ marginRight: "30px", marginTop: "15px" }}>
-                    <UnorderedlistElement>
-                        {navEndpoints.map((nav) => (
-                            <ListElement key={nav.url}>
-                                <Link to={nav.url}>{nav.name}</Link>
-                            </ListElement>
+                    <TemperatureUnitList>
+                        {temperatureUnitEndpoints.map((endpoint) => (
+                            <TemperatureUnitListItem key={endpoint.url}>
+                                <Link to={endpoint.url}>{endpoint.name}</Link>
+                            </TemperatureUnitListItem>
                         ))}
-                    </UnorderedlistElement>
+                    </TemperatureUnitList>
                 </div>
-            </NavElement>
+            </TemperatureNavContainer>
             <Outlet />
         </>
     );
 };
 
-const Navbar = () => {
+const TemperatureUnitNav = () => {
     return (
         <BrowserRouter>
-            <NavbarInfo />
+            <TemperatureUnitLinks />
             <Routes>
                 <Route path="/celcius" element={""} />
                 <Route path="/fahrenheit" element={""} />
@@ -43,4 +43,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default TemperatureUnitNav;

@@ -53,7 +53,7 @@ export const HeaderBackground = styled.div`
     padding: 20px 30px;
 `;
 
-export const NavElement = styled.nav`
+export const TemperatureNavContainer = styled.nav`
     position: absolute;
     top: 0;
     left: 0;
@@ -61,14 +61,14 @@ export const NavElement = styled.nav`
     z-index: 2;
 `;
 
-export const UnorderedlistElement = styled.ul`
+export const TemperatureUnitList = styled.ul`
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: transparent;
 `;
-export const ListElement = styled.li`
+export const TemperatureUnitListItem = styled.li`
     float: right;
 `;
 
@@ -82,7 +82,7 @@ export default {
     TemperaturContainerDiv,
     StyledSubHeading,
     HeaderBackground,
-    ListElement,
-    UnorderedlistElement,
-    NavElement,
+    TemperatureNavContainer,
+    TemperatureUnitListItem,
+    TemperatureUnitList,
 };
